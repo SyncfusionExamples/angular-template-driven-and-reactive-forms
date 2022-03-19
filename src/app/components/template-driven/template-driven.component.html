@@ -1,1 +1,39 @@
-<p>template-driven works!</p>
+<div class="row justify-content-sm-center">
+  <div class="col-sm-6">
+    <form #templateDrivenForm="ngForm" (ngSubmit)="handleFormSubmit(templateDrivenForm)">
+      <div class="form-group">
+        <label>Name</label>
+        <input class="form-control" placeholder="Provide your name" ngModel name="name" required type="text" />
+        <span class="text-danger" *ngIf="templateDrivenForm.controls['name']?.invalid && templateDrivenForm.controls['name'].dirty">
+            Name is required
+        </span>
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input class="form-control" placeholder="Provide your email address" ngModel name="emailAddress" required type="email"/>
+        <span class="text-danger" *ngIf="templateDrivenForm.controls['emailAddress']?.invalid && templateDrivenForm.controls['emailAddress'].dirty">
+          Email is required
+       </span>
+      </div>
+      <div class="form-group">
+        <label>Age</label>
+        <input class="form-control" placeholder="Provide your age" ngModel name="age" required type="number"/>
+        <span class="text-danger" *ngIf="templateDrivenForm.controls['age']?.invalid && templateDrivenForm.controls['age'].dirty">
+          Age is required
+       </span>
+      </div>
+      <div class="form-group">
+        <div style="display: flex; margin-top: 10px;">
+          <button
+            type="submit"
+            class="btn btn-primary"
+            style="margin-left: auto; width: 30%;"
+            [disabled]="templateDrivenForm.invalid"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

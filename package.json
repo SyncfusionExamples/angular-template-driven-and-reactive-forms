@@ -1,6 +1,12 @@
 {
   "name": "forms",
   "version": "0.0.0",
+  "repository": {
+    "url": "https://github.com/lakindu2002/angular-forms"
+  },
+  "author": {
+    "name": "Lakindu Hewawasam"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
