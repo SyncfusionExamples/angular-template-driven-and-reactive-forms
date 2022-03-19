@@ -1,1 +1,39 @@
-<p>reactive-form works!</p>
+<div class="row justify-content-sm-center">
+  <div class="col-sm-6">
+    <form [formGroup]="sampleForm" (ngSubmit)="handleSubmit()">
+      <div class="form-group">
+        <label>Name</label>
+        <input class="form-control" placeholder="Provide your name" type="text" formControlName="name"/>
+        <span class="text-danger" *ngIf="sampleForm.get('name')?.invalid && sampleForm.get('name')?.touched">
+          Name is invalid
+        </span>
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input class="form-control" placeholder="Provide your email address" required type="email" formControlName="emailAddress"/>
+        <span class="text-danger" *ngIf="sampleForm.get('emailAddress')?.invalid  && sampleForm.get('emailAddress')?.touched">
+          Email is invalid
+        </span>
+      </div>
+      <div class="form-group">
+        <label>Age</label>
+        <input class="form-control" placeholder="Provide your age" type="number" formControlName="age"/>
+        <span class="text-danger" *ngIf="sampleForm.get('age')?.invalid  && sampleForm.get('age')?.touched">
+          Age is invalid
+        </span>
+      </div>
+      <div class="form-group">
+        <div style="display: flex; margin-top: 10px;">
+          <button
+            type="submit"
+            class="btn btn-primary"
+            style="margin-left: auto; width: 30%;"
+            [disabled]="sampleForm.invalid"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
