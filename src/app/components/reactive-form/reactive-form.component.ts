@@ -10,10 +10,10 @@ export class ReactiveFormComponent implements OnInit {
 
   sampleForm!: FormGroup;
 
-  constructor() {
-  }
-
   ngOnInit(): void {
+    // create an instance of form group
+    // for the object passed, the key identifies the control name, the value identifies the actual control
+    // the Validators provides validator functions that need to be applied to the control value
     this.sampleForm = new FormGroup({
       'name': new FormControl('', [Validators.required]),
       'emailAddress': new FormControl('', [Validators.required, Validators.email]),
