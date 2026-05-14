@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Forms:build:production"
+              "buildTarget": "Forms:build:production"
             },
             "development": {
-              "browserTarget": "Forms:build:development"
+              "buildTarget": "Forms:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Forms:build"
+            "buildTarget": "Forms:build"
           }
         },
         "test": {
@@ -103,5 +103,8 @@
       }
     }
   },
-  "defaultProject": "Forms"
+  "defaultProject": "Forms",
+  "cli": {
+    "analytics": false
+  }
 }
